@@ -5,9 +5,15 @@ const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
 export default {
-  entry: './index.ts',
+  entry: './dist/main.js',
   mode: 'development',
+
+  devServer: {
+    inline: false,
+    contentBase: "./dist",
+  },
   module: {
+
     rules: [
       {
         test: /\.ts?$/,
@@ -17,7 +23,7 @@ export default {
     ],
   },
   resolve: {
-    extensions: ['.ts', '.js'],
+    extensions: ['.tsx', '.ts', '.js'],
     fallback: {
       http: false,
       https: false,

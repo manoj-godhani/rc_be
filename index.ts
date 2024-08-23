@@ -23,6 +23,7 @@ const app = express();
 const server = http.createServer(app);
 
 export const io = new SocketIOServer(server, {
+  // @ts-ignore
   cors: {
     origin:config.socketClientUrl,
     methods: ["GET", "POST"],
@@ -51,6 +52,7 @@ app.use('/api/tags', tagsRoutes)
 
 
 app.get('/api/', (req: Request, res: Response) => {
+  // @ts-ignore
   res.send('default root path');
 });
 
