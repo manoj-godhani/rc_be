@@ -1,0 +1,46 @@
+# Exported from Render on 2024-08-23T06:12:19Z
+services:
+- type: web
+  name: rc_be
+  runtime: node
+  repo: https://github.com/manoj-godhani/rc_be
+  plan: free
+  envVars:
+  - key: EMAIL_API_URL
+    sync: false
+  - key: EMAIL_USER_KEY
+    sync: false
+  - key: EMAIL_API_KEY
+    sync: false
+  - key: CLIENT_URL
+    sync: false
+  - key: SOCKET_IO_URL
+    sync: false
+  - key: JWT_TOKEN_EXPIRE
+    sync: false
+  - key: JWT_SECRET
+    sync: false
+  - key: STRIPE_SECRET_KEY
+    sync: false
+  - key: DIRECT_URL
+    sync: false
+  - key: DATABASE_URL
+    sync: false
+  - key: PROJECT_URL
+    sync: false
+  - key: FRONT_END_URL
+    sync: false
+  - key: SUPABASE_KEY
+    sync: false
+  - key: SUPABASE_URL
+    sync: false
+  - key: DB_PASSWORD
+    sync: false
+  - key: DB_USER
+    sync: false
+  - key: DB_HOST
+    sync: false
+  region: oregon
+  buildCommand: npm install
+  startCommand: npm run dev
+version: "1"
