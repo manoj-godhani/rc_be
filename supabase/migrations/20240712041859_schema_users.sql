@@ -1,0 +1,22 @@
+CREATE TABLE users (
+  id SERIAL PRIMARY KEY,
+  firstname TEXT,
+  lastname TEXT,
+  email TEXT UNIQUE,
+  password TEXT NOT NULL,
+  subscriptionplan TEXT DEFAULT 'null',
+  subscriptionDate TIMESTAMPTZ,
+  expirysubscriptiondate TIMESTAMPTZ,
+  isuserplanactive BOOLEAN DEFAULT false,
+  companyid BIGINT,
+  roleid BIGINT,
+  isemailverified BOOLEAN DEFAULT false,
+  accounttype TEXT DEFAULT 'owner',
+  isaccountenable BOOLEAN DEFAULT false,
+  resettoken TEXT DEFAULT '',
+  resettokenexpiry TIMESTAMPTZ,
+  accesssharedby BIGINT[] DEFAULT '{}',
+  createdat TIMESTAMPTZ DEFAULT NOW(),
+  updatedat TIMESTAMPTZ DEFAULT NOW(),
+  CONSTRAINT fk_company FOREIGN KEY (companyid) REFERENCES company(id)
+);

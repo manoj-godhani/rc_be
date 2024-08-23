@@ -1,0 +1,21 @@
+{
+  "compilerOptions": {
+    "target": "ES6",
+    "module": "commonjs",
+    "outDir": "./dist",
+    "rootDir": "./",
+    "esModuleInterop": true,
+    "strict": false, // Disable strict mode
+    "noEmitOnError": false, // Allow emitting files even if there are errors
+    "skipLibCheck": true,
+    "baseUrl": "./",
+    "paths": {
+      "@utils/*": ["utils/*"],
+      "@controllers/*": ["controllers/*"],
+      "@services/*": ["services/*"],
+      "@routes/*": ["routes/*"],
+      "@types/*": ["types/*"]
+    }
+  },
+  "exclude": ["node_modules"]
+}
